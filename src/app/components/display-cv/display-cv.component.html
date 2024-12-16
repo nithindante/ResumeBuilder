@@ -1,0 +1,40 @@
+<div class="basiclayout">
+    <div class="basicDetails">
+        <h4>{{basicDetails.name}}</h4>
+        <span>{{basicDetails.email}}</span>
+        <span *ngIf="basicDetails.phone>0">{{basicDetails.phone}}</span>
+    </div>
+    <h4>Education</h4>
+    <div class="educationDetails">
+        <div>
+            <h6>{{edudetails.school}}</h6>
+            <div class="dates">
+                <span>{{edudetails.startdate}}</span>
+                <div>-</div>
+                <span>{{edudetails.enddate}}</span>
+            </div>
+        </div>
+        <div>
+            <span>{{edudetails.title}}</span>
+        </div>
+    </div>
+    <h4>Work Experience</h4>
+    <div class="workDetails" *ngFor="let work of workArr">
+        <div>
+            <h6>{{work.cname}}</h6>
+            <div class="dates">
+                <span>{{work.startdate}}</span>
+                <div>-</div>
+                <span>{{work.enddate}}</span>
+            </div>
+        </div>
+        <div>
+            <span>{{work.title}}</span>
+        </div>
+        <ul>
+            <li *ngIf="workArr.length>0">
+                {{work.responsibilities}}
+            </li>
+        </ul>
+    </div>
+</div>

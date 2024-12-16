@@ -1,0 +1,22 @@
+.innerDiv{
+    display: grid;
+    grid-template-columns: 0.3fr 0.7fr;
+    text-align: center;
+    align-items: center;
+}
+
+.basicForm{
+    padding: 1rem;
+    margin: 1rem;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+    // display: flex;
+    // flex-direction: column;
+    
+}
+
+.buttons{
+    display: flex;
+    gap: 1rem;
+    justify-content: end;
+    padding-top: 1rem;
+}

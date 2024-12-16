@@ -1,0 +1,18 @@
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()" class="basicForm">
+    <div class="form-group innerDiv">
+        <label for="first-name">First Name: </label>
+        <input id="first-name" type="text" formControlName="name" class="form-control" required>
+    </div>
+    <div class="form-group innerDiv">
+        <label for="last-name">Email </label>
+        <input id="last-name" type="email" formControlName="email" class="form-control" required>
+    </div>
+    <div class="form-group innerDiv">
+        <label for="last-name">Phone No </label>
+        <input id="last-name" type="number" formControlName="phone" class="form-control" required>
+    </div>
+    <div class="buttons">
+        <button type="submit" class="btn btn-primary" [disabled]="!profileForm.valid">Submit</button>
+        <button type="click" class="btn btn-primary">Edit</button>
+    </div>
+</form>

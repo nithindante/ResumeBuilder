@@ -1,0 +1,38 @@
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit(profileForm)" class="basicForm">
+  <div class="form-group innerDiv">
+    <label for="first-name">School</label>
+    <input id="first-name" type="text" formControlName="school" class="form-control" required>
+  </div>
+  <div class="form-group innerDiv">
+    <label for="last-name">Title </label>
+    <input id="last-name" type="email" formControlName="title" class="form-control" required>
+  </div>
+  <div class="datePickers">
+    <mat-form-field>
+      <mat-label>Start Date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="startdate">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>End Date</mat-label>
+      <input matInput [matDatepicker]="picker2" formControlName="enddate">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-datepicker #picker2></mat-datepicker>
+
+    </mat-form-field>
+
+  </div>
+  <div class="buttons">
+    <div
+      *ngIf="profileForm.errors?.containAngular && profileForm?.dirty && profileForm.get('startdate').touched && profileForm.get('enddate').touched"
+      style="color: red">End date must be greater
+      than
+      start date.
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!profileForm.valid">Submit</button>
+    <button type="click" class="btn btn-primary">Edit</button>
+  </div>
+</form>
